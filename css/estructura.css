@@ -61,3 +61,41 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
     text-align: center;
     padding: 10px;
 }
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-button {
+    padding: 10px 20px;
+    background-color: rgb(7, 12, 12);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(7, 12, 12);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+
+}
