@@ -98,6 +98,7 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
 
 .dropdown:hover .dropdown-content {
     display: block;
+
 }
 
 .card {
@@ -115,3 +116,4 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
   .container {
     padding: 2px 16px;
   }
+
