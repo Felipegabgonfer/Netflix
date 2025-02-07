@@ -17,7 +17,7 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
         "main-content main-content main-content"
         "footer footer footer";
     grid-template-rows: 10vh 1fr auto; /* Altura: encabezado, contenido flexible, pie */
-    grid-template-columns: 5fr 1fr;/*250px 1fr; /* Ancho: barra lateral fija, contenido flexible */
+    grid-template-columns: 1fr 2fr 2fr;/*250px 1fr; /* Ancho: barra lateral fija, contenido flexible */
     min-height: 100vh;
     margin-left: 2vh;
     margin-right: 2vh ;
@@ -92,10 +92,28 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
 }
 
 .dropdown-content a:hover {
-    background-color: #ddd;
+    background-color: white;
+    color:black;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 
 }
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+
