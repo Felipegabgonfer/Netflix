@@ -126,3 +126,100 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
     flex-wrap: wrap;
     flex-direction: row;
 }
+
+@media (min-width: 1025px) {
+    .grid-container {
+        grid-template-columns: 5fr 1fr;
+    }
+    #barra1, #barra2 {
+        padding: 10px 20px;
+    }
+    .nav-list {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "barra1"
+            "main-content"
+            "footer";
+    }
+    #barra1 {
+        grid-area: barra1;
+        width: 50px;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    #barra1 .nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    #barra1 .nav-list li a {
+        font-size: 24px;
+        text-align: center;
+    }
+    #barra2 {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    #barra1 {
+        grid-area: footer;
+    }
+    #barra2 {
+        grid-area: barra2;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    #barra2 .nav-list {
+        justify-content: space-evenly;
+    }
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    #barra2 .nav-list li a {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-areas: 
+            "main-content"
+            "footer";
+            grid-template-columns: 1fr;
+    }
+    #barra1 {
+        grid-area: footer;
+        background-color: #333;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    #barra1 .nav-list {
+        justify-content: space-evenly;
+        gap: 0;
+    }
+    #barra1 .nav-list li a {
+        font-size: 24px;
+        padding: 10px;
+    }
+    .main-content {
+        padding: 10px;
+    }
+}
