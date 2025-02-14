@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html { 
+    background-color: rgb(112, 112, 194); /* útil para depurar */ 
+} 
+
+/* Estilo para el contenedor de detalle */
+.detalle-container { 
+    display: grid; 
+    grid-template-areas: "header" "contenido"; 
+    grid-template-columns: 1fr; 
+    gap: 20px; 
+    padding: 20px; 
+}
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "barra1 barra2"
+        "main-content main-content"
+        "footer footer";
+    grid-template-rows: 10vh 1fr auto; /* Altura: encabezado, contenido flexible, pie */
+    grid-template-columns: 5fr 1fr;/*250px 1fr; /* Ancho: barra lateral fija, contenido flexible */
+    min-height: 100vh;
+    margin-left: 2vh;
+    margin-right: 2vh ;
+}
+/* Estilo para las áreas */
+#barra1 {
+    grid-area: barra1;
+    background-color: #4CAF50;
+    color: white;
+    text-align: left;
+}
+#barra2 {
+    grid-area: barra2;
+    background-color: #f4f4f4;
+   
+}
+.main-content {
+    grid-area: main-content;
+    background-color: #fff;
+    padding: 20px;
+}
+.footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.detalle-header { 
+    text-align: center; 
+}
+
+.titulo-pelicula { 
+    font-size: 32px; 
+    margin-bottom: 10px; 
+}
+
+.pelicula-imagen { 
+    position: relative; 
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+.imagen-pelicula { 
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.controls { 
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+button { 
+    font-size: 20px; 
+    padding: 5px 10px; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    margin: 5px; 
+    cursor: pointer; 
+}
+
+button:hover { 
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.informacion-pelicula p { 
+    font-size: 16px; 
+    margin: 10px 0; 
+}
+
+.comentarios { 
+    margin-top: 20px; 
+}
+
+.comentarios h2 { 
+    font-size: 24px; 
+    margin-bottom: 10px; 
+}
+
+.comentarios-lista { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+    max-height: 300px; 
+    overflow-y: auto; 
+}
+
+.comentario { 
+    background-color: #f4f4f4; 
+    padding: 10px; 
+    border-radius: 5px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.comentarios-lista .comentario::before { 
+    content: counter(comentario-counter) ". "; 
+    counter-increment: comentario-counter; 
+    font-weight: bold; 
+}
+
+@media (min-width: 1024px) { 
+    .detalle-container { 
+        grid-template-areas: "header header" "contenido comentarios"; 
+        grid-template-columns: 2fr 1fr; 
+    }
+    .comentarios { 
+        margin-top: 0; 
+    } 
+}
+
+@media (max-width: 1024px) { 
+    .detalle-container { 
+        grid-template-areas: "header" "contenido comentarios"; 
+    }
+    .comentarios { 
+        margin-top: 0; 
+    }
+    .comentarios-lista { 
+        max-height: 300px; 
+        overflow-y: auto; 
+    }
+}
+
+@media (max-width: 768px) { 
+    .comentarios { 
+        display: none; 
+    } 
+}
+
+@media (max-width: 480px) { 
+    .detalle-container { 
+        grid-template-areas: "header" "contenido"; 
+    }
+    .comentarios { 
+         display: none; 
+    }
+    .controls { 
+        position: absolute; 
+        bottom: 20px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+    }
+    .pelicula-imagen { 
+        position: relative; 
+    }
+}
