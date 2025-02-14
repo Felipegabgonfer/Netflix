@@ -28,7 +28,8 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
     grid-area: barra1;
     background-color: rgb(7, 12, 12);
     color: aqua;
-    text-align: left;
+    text-align: center;
+    line-height: 60px;
 }
 #barra2 {
     border: 2px solid black;
@@ -98,17 +99,19 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
 
 .dropdown:hover .dropdown-content {
     display: block;
-
 }
 
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    margin: 15px;
+    text-align: center;
   }
   
   /* On mouse-over, add a deeper shadow */
   .card:hover {
+    background-color: black;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
   
@@ -117,3 +120,9 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
     padding: 2px 16px;
   }
 
+.flex-container{
+    margin: 0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
