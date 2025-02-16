@@ -10,6 +10,7 @@ html{
 }
 /* Contenedor principal
 ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de la pantalla */
+@media (min-width: 1025px) {
 .grid-container {
     display: grid;
     grid-template-areas:
@@ -62,45 +63,41 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
     text-align: center;
     padding: 10px;
 }
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-button {
-    padding: 10px 20px;
-    background-color: rgb(7, 12, 12);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(7, 12, 12);
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    min-width: 160px;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: white;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color:white;
+  }
+  li{
+    display:inline;
+    float:left;
+  }
+  .menu {
+    display: block;
+    padding: 8px;
+    background-color: #111;
     text-decoration: none;
-    padding: 12px 16px;
-    display: block;
+    color:white;
+  }
+  .menu:link{
+    text-decoration: none;
+    color:white
+  }
+ 
+  .menu:active{
+    text-decoration: none ;
 }
-
-.dropdown-content a:hover {
+.menu:visited{
+    text-decoration: none ;
+    color:white;
+}
+.menu:hover{
+    color: black;
     background-color: white;
-    color:black;
-}
+  }
 
-.dropdown:hover .dropdown-content {
-    display: block;
 }
-
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -119,26 +116,24 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
   .container {
     padding: 2px 16px;
   }
+  a{
+    text-decoration: none;
+    color:white;
+  }
 
 .flex-container{
     margin: 0 auto;
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
+    background-color: rgb(16,26,26) !important;
+}
+.imagen{
+    height: 200px;
 }
 
-@media (min-width: 1025px) {
-    .grid-container {
-        grid-template-columns: 5fr 1fr;
-    }
-    #barra1, #barra2 {
-        padding: 10px 20px;
-    }
-    .nav-list {
-        display: flex;
-        justify-content: space-around;
-    }
-}
+   
+
 
 @media (max-width: 1024px) {
     .grid-container {
