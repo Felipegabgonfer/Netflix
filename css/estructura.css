@@ -54,7 +54,8 @@ ahora se aplica a todos los dispostivos, aunque corresponde al tamaño grande de
     grid-area: main-content;
     background-color: rgb(16, 26, 26);
     color:#fff;
-    padding: 20px;
+    margin:0;
+    padding: 0;
 }
 .footer {
     grid-area: footer;
@@ -251,54 +252,170 @@ img{
 
 @media (max-width: 768px) {
     .grid-container {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-areas:
+            "barra2 barra1 barra1"
+            "barra2 main-content main-content "
+            " barra2 footer footer";
+        grid-template-rows: 10vh 1fr auto; /* Altura: encabezado, contenido flexible, pie */
+        grid-template-columns: 1fr 2fr 2fr;/*250px 1fr; /* Ancho: barra lateral fija, contenido flexible */
+        min-width: 100vh;
+        margin:0;
+        padding:0;
     }
+    
+    /* Estilo para las áreas */
     #barra1 {
-        grid-area: footer;
+        grid-area: barra1;
+        background-color: rgb(7, 12, 12);
+        color: aqua;
+        text-align: center;
+        line-height: 60px;
     }
     #barra2 {
-        grid-area: barra2;
-        position: fixed;
-        bottom: 0;
+        border: 2px solid black;
+        margin: 10 10 10 10;
         width: 100%;
-        z-index: 1;
+        grid-area: barra2;
+        background-color: rgb(3, 5, 5);
+        color:#fff;
+        
+       
     }
-    #barra2 .nav-list {
-        justify-content: space-evenly;
+    #barra3{
+        display:none;
     }
-    .nav-list {
-        flex-direction: column;
-        gap: 10px;
+    .main-content {
+        grid-area: main-content;
+        background-color: rgb(16, 26, 26);
+        color:#fff;
+        padding: 20px;
     }
-    #barra2 .nav-list li a {
-        font-size: 24px;
+    .footer {
+        grid-area: footer;
+        background-color: #111111;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin:0;
     }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        color:white;
+      }
+      li{
+        display:block;
+        float:left;
+      }
+      .menu {
+        display: block;
+        padding: 8px;
+        background-color: #111;
+        text-decoration: none;
+        color:white;
+      }
+      .menu:link{
+        text-decoration: none;
+        color:white
+      }
+     
+      .menu:active{
+        text-decoration: none ;
+    }
+    .menu:visited{
+        text-decoration: none ;
+        color:white;
+    }
+    .menu:hover{
+        color: black;
+        background-color: white;
+      }
 }
 
 @media (max-width: 480px) {
     .grid-container {
-        grid-template-areas: 
-            "main-content"
-            "footer";
-            grid-template-columns: 1fr;
+        display: grid;
+        grid-template-areas:
+            "barra1 barra1 barra1"
+            "main-content main-content main-content "
+            "barra3 barra3 barra3"
+            "footer footer footer";
+        grid-template-rows: 10vh 1fr auto; /* Altura: encabezado, contenido flexible, pie */
+        grid-template-columns: 1fr 2fr 2fr;/*250px 1fr; /* Ancho: barra lateral fija, contenido flexible */
+        min-width: 100vh;
+        margin:0;
+        padding:0;
     }
+    
+    /* Estilo para las áreas */
     #barra1 {
-        grid-area: footer;
-        background-color: #333;
-        position: fixed;
-        bottom: 0;
+        grid-area: barra1;
+        background-color: rgb(7, 12, 12);
+        color: aqua;
+        text-align: center;
+        line-height: 60px;
+    }
+    #barra2 {
+    display:none;
+    }
+    #barra3{
+        border: 2px solid black;
+        margin: 10 10 10 10;
         width: 100%;
-        z-index: 1;
-    }
-    #barra1 .nav-list {
-        justify-content: space-evenly;
-        gap: 0;
-    }
-    #barra1 .nav-list li a {
-        font-size: 24px;
-        padding: 10px;
+        grid-area: barra3;
+        background-color: rgb(3, 5, 5);
+        color:#fff;
     }
     .main-content {
-        padding: 10px;
+        grid-area: main-content;
+        background-color: rgb(16, 26, 26);
+        color:#fff;
+        padding: 20px;
     }
+    .footer {
+        grid-area: footer;
+        background-color: #111111;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        margin:0;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        color:white;
+      }
+      li{
+        display:block;
+        float:left;
+      }
+      .menu {
+        display: inline;
+        padding: 8px;
+        background-color: #111;
+        text-decoration: none;
+        color:white;
+      }
+      .menu:link{
+        text-decoration: none;
+        color:white
+      }
+     
+      .menu:active{
+        text-decoration: none ;
+    }
+    .menu:visited{
+        text-decoration: none ;
+        color:white;
+    }
+    .menu:hover{
+        color: black;
+        background-color: white;
+      }
+      .extra2{
+        display:none;
+      }
 }
