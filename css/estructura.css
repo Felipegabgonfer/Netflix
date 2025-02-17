@@ -128,11 +128,33 @@ ul {
     flex-direction: row;
     background-color: rgb(16,26,26) !important;
 }
-.imagen{
+img{
     height: 200px;
 }
-
-   
+.animacion1{
+    transition-duration:59ms;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+.animacion2{
+    transition-duration:1s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+.animacion3{
+    transition-duration:59ms;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+.animacion1:hover{
+     transform: translateY(-30px);
+    }
+.animacion2:hover{
+    transform:rotate(360deg);
+ }
+  .animacion3:hover{
+    transform: scale(150%);
+ }
 
 
 @media (max-width: 1024px) {
